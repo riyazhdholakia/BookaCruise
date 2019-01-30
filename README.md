@@ -1,6 +1,8 @@
 # Book a Cruise 
-GSU CSC Software Engineering Project - Group Name: Friends 
-Project title: Book a Cruise
+GSU CSC Software Engineering Project 
+Group Name: Friends 
+Group #: 1
+Project Title: Book a Cruise
 
 Contributors:
 1. Riyazh Dholakia
