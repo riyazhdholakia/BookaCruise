@@ -1,7 +1,7 @@
 # Book a Cruise 
 GSU CSC Software Engineering Project 
 Group Name: Friends 
-Group #: 1
+Group Number: 1
 Project Title: Book a Cruise
 
 Contributors:
