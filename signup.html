@@ -3,25 +3,20 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Login</title>
+<title>Sign Up</title>
 <!---<link rel="stylesheet" type="text/css" href="aboutme-style.css">-->
 </head>
 <body>
  
-  <h2>Login</h2>
+  <h2>Sign Up</h2>
 
- <div>
+ <div id="">
  <input type="email" placeholder="Email..." id="email_field"/>
  <input type="password" placeholder="Password..." id="psw_field"/>
 
- <button onclick="login()">Submit</button>
+ <button onclick="signUp()">Submit</button>
 
- <p1>Use the login email: riyazhdholakia@gmail.com password: admin123</p1>
-
- <button onclick="signUp()">Sign Up</button>
  </div>
-
-
 
   <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
   <script>
@@ -60,48 +55,16 @@
 // });
 
 
-  function login() {
+function signUp() {
     var userEmail = document.getElementById("email_field").value;
     var userPsw = document.getElementById("psw_field").value;
-
-    firebase.auth().signInWithEmailAndPassword(userEmail, userPsw).catch(function(error) {
+firebase.auth().createUserWithEmailAndPassword(userEmail, userPsw).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
-  if (error != null) {
-    window.alert("Error: " + errorMessage);
-  }
+  window.alert("Error: " + errorMessage);
   // ...
-  // if(error == null){
-  //       window.open('home_destination_departure.html', '_self');
-  //       window.alert("Hi");
-  //     }
 });
-sendToHomePage();
-  }
-
-  function sendToHomePage() {
-  firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-    var displayName = user.displayName;
-    var email = user.email;
-    var emailVerified = user.emailVerified;
-    var photoURL = user.photoURL;
-    var isAnonymous = user.isAnonymous;
-    var uid = user.uid;
-    var providerData = user.providerData;
-    window.open('home_destination_departure.html', '_self');
-    // ...
-  } else {
-    // User is signed out.
-    // ...
-  }
-});
-}
-
-function signUp() {
-  window.open('signup.html', '_self');
 }
   </script>
 </body>
