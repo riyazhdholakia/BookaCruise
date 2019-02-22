@@ -31,3 +31,13 @@ hr {
     border-top: 1px solid #f8f8f8;
     border-bottom: 1px solid rgba(0,0,0,0.2);
 }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(134, 132, 132);
+    color: white;
+    text-align: center;
+  }

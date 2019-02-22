@@ -42,7 +42,7 @@
  				<h1>Cruising</h1>
  				<h3>Cruise Fast</h3>
  				<hr>
- 				<button class="btn btn-default btn-lg"><i class="fa fa-ship"></i>   Cruise Now!</button>
+ 				<button class="btn btn-default btn-lg" onclick="bookNow();"> <i class="fa fa-ship"></i>   Cruise Now!</button>
  			</div>
  		</div>
  	</div>
@@ -94,7 +94,15 @@ function sendToHomePage() {
        firebase.auth().signOut()
        console.log("success");
         print("success");
+     }
+        function bookNow() {
+            window.open('destination_departure.html', '_self');
+        }
  </script>
+
+ <div class="footer">
+  <p> © 2019 Cruising</p>
+</div>
 
 </body>
 </html>
