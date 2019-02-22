@@ -3,20 +3,73 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Sign Up</title>
-<!---<link rel="stylesheet" type="text/css" href="aboutme-style.css">-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<title>Login</title>
+<style>
+body, html {
+  height: 100%;
+}
+
+ body {
+  background-image: url(pics/cruise3.jpg);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#bgwhite {
+  background-color:white;
+}
+
+#welcome {
+  align-content: center;
+}
+
+h1 {
+  color: white;
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 5em;
+	text-align: center;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+}
+
+</style>
 </head>
 <body>
- 
-  <h2>Sign Up</h2>
+    <div id="welcome" style="width:800px; margin:0 auto;">
+    <center><h1>Welcome to Cruising!</h1></center>
+    </div>
+    <div class="container">
+    <div id="bgwhite" style="width:800px; margin:0 auto;">
+        <center><h3>Sign Up to Book a Cruise</h3></center>
 
- <div id="">
- <input type="email" placeholder="Email..." id="email_field"/>
- <input type="password" placeholder="Password..." id="psw_field"/>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+ <input type="email" placeholder="Email..." class="form-control" id="email_field"/>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+ <input type="password" placeholder="Password..." class="form-control" id="psw_field"/>
+        </div>
 
- <button onclick="signUp()">Submit</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
+<center><button type="button" class="btn btn-primary" onclick="signUp()">Submit</button></center>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <center><button type="button" class="btn btn-success" onclick="login()">Login</button></center>
+&nbsp;&nbsp;
  </div>
+</div>
+
+
 
   <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
   <script>
@@ -26,34 +79,19 @@
       authDomain: "cruising-23cb7.firebaseapp.com",
       databaseURL: "https://cruising-23cb7.firebaseio.com",
       projectId: "cruising-23cb7",
-      storageBucket: "",
+      storageBucket: "cruising-23cb7.appspot.com",
       messagingSenderId: "322449955301"
     };
     firebase.initializeApp(config);
   </script>
   <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
 
   <script>
-    // this only to check if they are logged in
-//     firebase.auth().onAuthStateChanged(function(user) {
-//   if (user) {
-//     // User is signed in.
-//     var displayName = user.displayName;
-//     var email = user.email;
-//     var emailVerified = user.emailVerified;
-//     var photoURL = user.photoURL;
-//     var isAnonymous = user.isAnonymous;
-//     var uid = user.uid;
-//     var providerData = user.providerData;
-//     // ...
-//   } else {
-//     // User is signed out.
-//     // ...
-//   }
-// });
-
+  
+function login() {
+  window.open('login.html', '_self');
+}
 
 function signUp() {
     var userEmail = document.getElementById("email_field").value;
@@ -63,9 +101,15 @@ firebase.auth().createUserWithEmailAndPassword(userEmail, userPsw).catch(functio
   var errorCode = error.code;
   var errorMessage = error.message;
   window.alert("Error: " + errorMessage);
+  if(error == null) {
+  window.open('index.html', '_self');
+}
   // ...
 });
+window.alert("Account successfully created. Click ok to Login!")
+window.location.href = "login.html";
 }
+
   </script>
 </body>
 </html>
