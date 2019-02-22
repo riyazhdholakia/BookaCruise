@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<title>Home</title>
+<style>
+#cf img {
+  position: absolute;
+    left: 25%;
+    -webkit-animation-name: fade;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 6s;
+    animation-name: fade;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+    background-color: white;
+}
+
+@-webkit-keyframes fade {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    33% {opacity: 1;}
+    53% {opacity: 0;}
+    100% {opacity: 0;}
+}
+@keyframes fade {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    33% {opacity: 1;}
+    53% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+#cruise2 {
+    -webkit-animation-delay: -4s;
+}
+
+#cruise3 {
+    -webkit-animation-delay: -2s;
+}
+
+.wrapper {
+  position: relative;
+}
+
+#mainframe{
+    border: 0;
+    width: 85%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+div {
+    align-content: center
+}
+
+</style>
+<!---<link rel="stylesheet" type="text/css" href="aboutme-style.css">-->
+</head>
+<body style=background-color:#000034>
+        <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">Cruising</a>
+                  </div>
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="destination_departure.html">Book Now</a></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="login.html" onclick="return logout();"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                  </ul>
+                </div>
+              </nav>
+<table id="mainframe">
+
+              <div class="container">
+                    <tr>
+                            <td>
+                    <div class="row">
+                      <div class="col-lg-1">
+                      <div class="wrapper">
+                            <div id="cf">
+                              <img id="cruise1" src="pics/cruise1.jpg" alt="Cruise" width="700" height="300"/>
+                              <img id="cruise2" src="pics/cruise2.jpg" alt="Cruise" width="700" height="300"/>
+                              <img id="cruise3" src="pics/cruise3.jpg" alt="Cruise" width="700" height="300"/>
+                          </div>
+                      </div>
+                    </div>
+                    </div>
+                    </td>
+                    </tr>
+                    <tr>
+                            <td>
+                    <div class="row">
+                            <div class="col-lg-8">
+                            <button class="button">Click Me</button>
+                    </div>
+                    </div>
+                </td>
+            </tr>
+                  </div>
+                </table>
+
+            
+ 
+    <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAmbS9EKpnJRTE5AAnKKgUFMkdDF7KOePk",
+      authDomain: "cruising-23cb7.firebaseapp.com",
+      databaseURL: "https://cruising-23cb7.firebaseio.com",
+      projectId: "cruising-23cb7",
+      storageBucket: "",
+      messagingSenderId: "322449955301"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+
+  <script>
+      function logout() {
+        firebase.auth().signOut()
+  </script>
+</body>
+</html>
