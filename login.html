@@ -3,23 +3,62 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <title>Login</title>
-<!---<link rel="stylesheet" type="text/css" href="aboutme-style.css">-->
+<style>
+body, html {
+  height: 100%;
+}
+
+ body {
+  background-image: url(pics/cruise3.jpg);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#bgwhite {
+  background-color:white;
+}
+
+#welcome {
+  align-content: center;
+}
+
+h1 {
+  color: white;
+}
+
+</style>
 </head>
 <body>
- 
-  <h2>Login</h2>
+    <div id="welcome" style="width:800px; margin:0 auto;">
+    <center><h1>Welcome to Cruising!</h1></center>
+    </div>
+    <div class="container">
+    <div id="bgwhite" style="width:800px; margin:0 auto;">
+        <center><h3>Login to get Started</h3></center>
 
- <div>
- <input type="email" placeholder="Email..." id="email_field"/>
- <input type="password" placeholder="Password..." id="psw_field"/>
-
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+ <input type="email" placeholder="Email..." class="form-control" id="email_field"/>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+ <input type="password" placeholder="Password..." class="form-control" id="psw_field"/>
+        </div>
  <button onclick="login()">Submit</button>
 
- <p1>Use the login email: riyazhdholakia@gmail.com password: admin123</p1>
+ <p1>Use the login email: riyazhdholakia@gmail.com password: admin123
+ </p1>
 
  <button onclick="signUp()">Sign Up</button>
  </div>
+</div>
 
 
 
@@ -41,25 +80,6 @@
   <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
 
   <script>
-    // this only to check if they are logged in
-//     firebase.auth().onAuthStateChanged(function(user) {
-//   if (user) {
-//     // User is signed in.
-//     var displayName = user.displayName;
-//     var email = user.email;
-//     var emailVerified = user.emailVerified;
-//     var photoURL = user.photoURL;
-//     var isAnonymous = user.isAnonymous;
-//     var uid = user.uid;
-//     var providerData = user.providerData;
-//     // ...
-//   } else {
-//     // User is signed out.
-//     // ...
-//   }
-// });
-
-
   function login() {
     var userEmail = document.getElementById("email_field").value;
     var userPsw = document.getElementById("psw_field").value;
@@ -71,11 +91,6 @@
   if (error != null) {
     window.alert("Error: " + errorMessage);
   }
-  // ...
-  // if(error == null){
-  //       window.open('home_destination_departure.html', '_self');
-  //       window.alert("Hi");
-  //     }
 });
 sendToHomePage();
   }
