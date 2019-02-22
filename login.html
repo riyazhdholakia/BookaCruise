@@ -31,33 +31,42 @@ body, html {
 
 h1 {
   color: white;
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 5em;
+	text-align: center;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
 }
 
 </style>
 </head>
 <body>
     <div id="welcome" style="width:800px; margin:0 auto;">
-    <center><h1>Welcome to Cruising!</h1></center>
+    <center><h1>Cruising!</h1></center>
     </div>
     <div class="container">
     <div id="bgwhite" style="width:800px; margin:0 auto;">
-        <center><h3>Login to get Started</h3></center>
+        <center><h3>Login to Book a Cruise</h3></center>
 
         <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
  <input type="email" placeholder="Email..." class="form-control" id="email_field"/>
         </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
  <input type="password" placeholder="Password..." class="form-control" id="psw_field"/>
         </div>
-        <button type="button" class="btn btn-success" onclick="login()">Login</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <center><button type="button" class="btn btn-success" onclick="login()">Login</button></center>
 <!-- <button onclick="login()">Login</button>-->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
- <p1>Use the login email: riyazhdholakia@gmail.com password: admin123
- </p1>
- <button type="button" class="btn btn-primary" onclick="signUp()">Sign Up</button>
+<center><button type="button" class="btn btn-primary" onclick="signUp()">Sign Up</button></center>
  <!--<button onclick="signUp()">Sign Up</button>-->
+ <center><p1>Use for Login email: riyazhdholakia@gmail.com password: admin123 or Sign Up</p1></center>
  </div>
 </div>
 
