@@ -14,7 +14,7 @@ body, html {
 }
 
  body {
-  background-image: url(pics/cruise3.jpg);
+  background-image: url(pics/cruise5.jpeg);
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -60,13 +60,13 @@ h1 {
  <input type="password" placeholder="Password..." class="form-control" id="psw_field"/>
         </div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <center><button type="button" class="btn btn-success" onclick="login()">Login</button></center>
-<!-- <button onclick="login()">Login</button>-->
+        <center><button type="button" class="btn btn-success" onclick="login()">Submit</button></center>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <center><button type="button" class="btn btn-primary" onclick="signUp()">Sign Up</button></center>
- <!--<button onclick="signUp()">Sign Up</button>-->
+&nbsp;&nbsp;
  <center><p1>Use for Login email: riyazhdholakia@gmail.com password: admin123 or Sign Up</p1></center>
+ &nbsp;&nbsp;
  </div>
 </div>
 
@@ -80,14 +80,13 @@ h1 {
       authDomain: "cruising-23cb7.firebaseapp.com",
       databaseURL: "https://cruising-23cb7.firebaseio.com",
       projectId: "cruising-23cb7",
-      storageBucket: "",
+      storageBucket: "cruising-23cb7.appspot.com",
       messagingSenderId: "322449955301"
     };
     firebase.initializeApp(config);
   </script>
   <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
 
   <script>
   function login() {

@@ -1,50 +1,160 @@
-<!DOCTYPE html>
-<html lang = "en">
-<head>
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<title>Home</title>
-<!---<link rel="stylesheet" type="text/css" href="aboutme-style.css">-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Suites</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+<style>
+  body,
+html {
+    width: 100%;
+    height: 100%;
+    font-family: "Lato";
+    color: white;
+    background-image: url(pics/ocean1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
+
+h1 {
+  padding-top: 5%;
+	font-weight: 700;
+	font-size: 5em;
+}
+
+.content{
+	text-align: center;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+}
+</style>
 </head>
 <body>
-        <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                  <div class="navbar-header">
-                    <a class="navbar-brand" href="home_destination_departure.html">Cruising</a>
-                  </div>
-                  <ul class="nav navbar-nav">
-                    <li class="active"><a href="home_destination_departure.html">Home</a></li>
-                  </ul>
-                  <ul class="nav navbar-nav navbar-right">
-                    <li><a href="login.html" onclick="return logout();"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-                  </ul>
-                </div>
-              </nav>
 
-              <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyAmbS9EKpnJRTE5AAnKKgUFMkdDF7KOePk",
-      authDomain: "cruising-23cb7.firebaseapp.com",
-      databaseURL: "https://cruising-23cb7.firebaseio.com",
-      projectId: "cruising-23cb7",
-      storageBucket: "",
-      messagingSenderId: "322449955301"
-    };
-    firebase.initializeApp(config);
-  </script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+ <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Cruising</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destination_departure.html">Book Now</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html" onclick="return logout();">Log Out    <i class="fa fa-user"></i></a></li>
+      </ul>
+    </div>
+  </div>
+ </nav>
 
-  <script>
-      function logout() {
-        firebase.auth().signOut()
-  </script>
+ <div class="container">
+ 	<div class="row">
+ 		<div class="col-lg-12">
+ 			<div class="content">
+ 				<h1>Suites</h1>
+ 			</div>
+ 		</div>
+   </div>
+  </div>
+  
+   <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail">
+            <a href="dates.html">
+            <img src="pics/silverroom.jpeg" alt="Silver" style="width:100%">
+            <div class="caption">
+                <center><p>Silver Suite</p></center>
+                <center><p>Price: $399.99</p></center>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+            <a href="dates.html">
+            <img src="pics/roomgold.jpeg" alt="Gold" style="width:100%">
+            <div class="caption">
+                <center><p>Gold Suite</p></center>
+                <center><p>Price: $499.99</p></center>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+            <a href="dates.html">
+            <img src="pics/platinumroom.jpeg" alt="Platinum" style="width:100%">
+            <div class="caption">
+                <center><p>Platinum Suite</p></center>
+                <center><p>Price: $599.99</p></center>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+ <script>
+   // Initialize Firebase
+   var config = {
+     apiKey: "AIzaSyAmbS9EKpnJRTE5AAnKKgUFMkdDF7KOePk",
+     authDomain: "cruising-23cb7.firebaseapp.com",
+     databaseURL: "https://cruising-23cb7.firebaseio.com",
+     projectId: "cruising-23cb7",
+     storageBucket: "cruising-23cb7.appspot.com",
+     messagingSenderId: "322449955301"
+   };
+   firebase.initializeApp(config);
+ </script>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+
+ <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+ <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ <script>
+function sendToHomePage() {
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    var displayName = user.displayName;
+    var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    var providerData = user.providerData;
+  
+    // ...
+  } else {
+    // User is signed out.
+    // ...
+  }
+});
+}
+     function logout() {
+        print("success");
+       firebase.auth().signOut()
+       console.log("success");
+        print("success");
+ </script>
+
 </body>
 </html>
