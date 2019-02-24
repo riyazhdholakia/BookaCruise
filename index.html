@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" type="text/css" href="app.css">
 </head>
-<body>
+<body onload='sendToHomePage()'>
 
  <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
@@ -42,7 +42,7 @@
  				<h1>Cruising</h1>
  				<h3>Cruise Fast</h3>
  				<hr>
- 				<button class="btn btn-default btn-lg"><i class="fa fa-ship"></i>   Cruise Now!</button>
+ 				<button class="btn btn-default btn-lg" onclick="bookNow();"> <i class="fa fa-ship"></i>   Cruise Now!</button>
  			</div>
  		</div>
  	</div>
@@ -86,15 +86,21 @@ function sendToHomePage() {
   } else {
     // User is signed out.
     // ...
+    window.open('login.html', '_self');
   }
 });
 }
      function logout() {
-        print("success");
        firebase.auth().signOut()
-       console.log("success");
-        print("success");
+     }
+        function bookNow() {
+            window.open('destination_departure.html', '_self');
+        }
  </script>
+
+ <div class="footer">
+  <p> © 2019 Cruising</p>
+</div>
 
 </body>
 </html>
