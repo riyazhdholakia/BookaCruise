@@ -5,6 +5,9 @@ Group Number: 1
 Project Title: Book a Cruise
 Project Webiste Name: Cruising
 
+https://riyazhdholakia.github.io/CSC-SWE-Friends/ 
+Click link to see our website!
+
 Contributors:
 1. [Riyazh Dholakia](https://github.com/riyazhdholakia)
 2. [Sujal Patel](https://github.com/spatel287)
