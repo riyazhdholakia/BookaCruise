@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<title>Login</title>
+<style>
+body, html {
+  height: 100%;
+}
+
+ body {
+  background-image: url(pics/cruise5.jpeg);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#welcome {
+  align-content: center;
+}
+
+  
+main {
+    flex: 1 0 auto;
+  }
+  
+  h1.title,
+  .footer-copyright a {
+    font-family: 'Architects Daughter', cursive;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  
+  /* start welcome animation */
+  
+  
+  
+   .splash {
+    height: 0px;
+    padding: 0px;
+    border: 130em solid #039be5;
+    position: fixed;
+    left: 50%;
+    top: 100%;
+    display: block;
+    box-sizing: initial;
+    overflow: hidden;
+  
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+  }
+  
+   #welcome1 {
+    background: #311b92 ;
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, hide 2s 2.9s ease forwards;
+  }
+     
+  
+  
+  @keyframes init {
+    0% {
+      width: 0px;
+      height: 0px;
+    }
+    100% {
+      width: 56px;
+      height: 56px;
+      margin-top: 0px;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes puff {
+    0% {
+      top: 100%;
+      height: 0px;
+      padding: 0px;
+    }
+    100% {
+      top: 50%;
+      height: 100%;
+      padding: 0px 100%;
+    }
+  }
+  
+  @keyframes borderRadius {
+    0% {
+      border-radius: 50%;
+    }
+    100% {
+      border-radius: 0px;
+    }
+  }
+  
+  @keyframes moveDown {
+    0% {
+      top: 50%;
+    }
+    50% {
+      top: 40%;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+  
+  @keyframes moveUp {
+    0% {
+      background: #311b92;
+      top: 100%;
+    }
+    50% {
+      top: 40%;
+    }
+    100% {
+      top: 50%;
+      background: #039be5;
+    }
+  }
+  
+  @keyframes materia {
+    0% {
+      background: #039be5;
+    }
+    50% {
+      background: #039be5;
+      top: 26px;
+    }
+    100% {
+      background: #311b92;
+      width: 100%;
+      height: 64px;
+      border-radius: 0px;
+      top: 26px;
+    }
+  }
+  
+  @keyframes moveIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes hide {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  } 
+
+  
+
+
+</style>
+</head>
+<body>
+    
+        <span id="splash-overlay" class="splash"></span>
+        <span id="welcome1" class="z-depth-4"></span>
+
+    <div id="welcome" style="width:400px; margin:0 auto;">
+    
+    <center><h1><font color=#FFFFFF>Cruising!</font></h1></center>
+    </div>
+    <div class="container">
+    <div id="bgwhite" style="width:400px; margin:0 auto;">
+        <center><h3><font color=#FFFFFF>Login to Book a Cruise</font></h3></center>
+
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+ <input type="email" placeholder="Email..." class="form-control" id="email_field"/>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+ <input type="password" placeholder="Password..." class="form-control" id="psw_field"/>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <center><button type="button" class="btn btn-success" onclick="login()">Submit</button></center>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<center><button type="button" class="btn btn-primary" onclick="signUp()">Sign Up</button></center>
+&nbsp;&nbsp;
+ <center><p1><font color=#FFFFFF>Use for Login email: riyazhdholakia@gmail.com password: admin123 or Sign Up</font></p1></center>
+ &nbsp;&nbsp;
+ </div>
+</div>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAmbS9EKpnJRTE5AAnKKgUFMkdDF7KOePk",
+      authDomain: "cruising-23cb7.firebaseapp.com",
+      databaseURL: "https://cruising-23cb7.firebaseio.com",
+      projectId: "cruising-23cb7",
+      storageBucket: "cruising-23cb7.appspot.com",
+      messagingSenderId: "322449955301"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+
+  <script>
+  function login() {
+    var userEmail = document.getElementById("email_field").value;
+    var userPsw = document.getElementById("psw_field").value;
+
+    firebase.auth().signInWithEmailAndPassword(userEmail, userPsw).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  if (error != null) {
+    window.alert("Error: " + errorMessage);
+  }
+});
+sendToHomePage();
+  }
+
+  function sendToHomePage() {
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    var displayName = user.displayName;
+    var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    var providerData = user.providerData;
+    window.open('index.html', '_self');
+    // ...
+  } else {
+    // User is signed out.
+    // ...
+  }
+});
+}
+
+function signUp() {
+  window.open('signup.html', '_self');
+}
+  </script>
+</body>
+</html>
