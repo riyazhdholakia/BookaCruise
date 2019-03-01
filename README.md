@@ -1,10 +1,15 @@
 # Book a Cruise 
+<br />
 GSU CSC Software Engineering Project 
+<br />
 Group Name: Friends 
+<br />
 Group Number: 1
+<br />
 Project Title: Book a Cruise
+<br />
 Project Webiste Name: Cruising
-
+<br />
 
 https://riyazhdholakia.github.io/CSC-SWE-Friends/ 
 <br />
