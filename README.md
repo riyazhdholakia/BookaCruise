@@ -19,7 +19,8 @@ Click link to see our website!
 Perferred way to run project is to, clone or download as zip and open up index.html file.
 <br />
 Database: Firebase
-
+<br />
+<br />
 Contributors:
 1. [Riyazh Dholakia](https://github.com/riyazhdholakia)
 2. [Sujal Patel](https://github.com/spatel287)
