@@ -7,9 +7,12 @@ Project Webiste Name: Cruising
 
 
 https://riyazhdholakia.github.io/CSC-SWE-Friends/ 
-*Click link to see our website!
-*Perferred way to run project is to, clone or download as zip and open up index.html file.
-*Database: Firebase
+<br />
+Click link to see our website!
+<br />
+Perferred way to run project is to, clone or download as zip and open up index.html file.
+<br />
+Database: Firebase
 
 Contributors:
 1. [Riyazh Dholakia](https://github.com/riyazhdholakia)
