@@ -5,11 +5,10 @@ Group Number: 1
 Project Title: Book a Cruise
 Project Webiste Name: Cruising
 
+
 https://riyazhdholakia.github.io/CSC-SWE-Friends/ 
 *Click link to see our website!
-
 *Perferred way to run project is to, clone or download as zip and open up index.html file.
-
 *Database: Firebase
 
 Contributors:
