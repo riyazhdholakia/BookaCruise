@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Suites</title>
+    <title>Dates</title>
+   
+    
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    
     <style>
         body,
         html {
@@ -32,6 +33,9 @@
         .content {
             text-align: center;
             text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+        }
+        .thumbnail{
+          color: black
         }
     </style>
 </head>
@@ -73,50 +77,30 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-12">
                 <div class="thumbnail">
-                    <a href="dates.html">
-                        <center><p>Select dates</p></center>
-                        
-                        
-                        <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" style="width:100% />
+                    
 
-                        <script>
-                        $(function() {
-                        $('input[name="daterange"]').daterangepicker({
-                        opens: 'left'
-                        }, function(start, end, label) {
-                        console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-                        });
-                        });
-                        </script>
-                        <!--<img src="pics/silverroom.jpeg" alt="Silver" style="width:100%">-->
+                    <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
 
-                    </a>
+<script>
+    
+$(function() {
+  $('input[name="daterange"]').daterangepicker({
+    opens: 'left'
+  }, function(start, end, label) {
+    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  });
+});
+</script>
+         
+         <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+         <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+                    
                 </div>
             </div>
-            <!--<div class="col-md-4">
-                <div class="thumbnail">
-                    <a href="dates.html">
-                        <img src="pics/roomgold.jpeg" alt="Gold" style="width:100%">
-                        <div class="caption">
-                            <center><p>Gold Suite</p></center>
-                            <center><p>Price: $499.99</p></center>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <a href="dates.html">
-                        <img src="pics/platinumroom.jpeg" alt="Platinum" style="width:100%">
-                        <div class="caption">
-                            <center><p>Platinum Suite</p></center>
-                            <center><p>Price: $599.99</p></center>
-                        </div>
-                    </a>
-                </div>
-            </div>-->
+            
         </div>
     </div>
 
