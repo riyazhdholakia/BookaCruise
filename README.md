@@ -21,8 +21,13 @@ Database: Firebase
 <br />
 <br />
 Contributors:
+<br />
 1. [Riyazh Dholakia](https://github.com/riyazhdholakia)
+<br />
 2. [Sujal Patel](https://github.com/spatel287)
+<br />
 3. [Randall Byrd](https://github.com/Randall97)
+<br />
 4. [Biprojoyti Paul](https://github.com/Bipro723)
+<br />
 5. [Syed Kalam](https://github.com/kalsyed91)
