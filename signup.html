@@ -22,13 +22,9 @@ body, html {
   background-position: center;
 }
 
-
-
 #welcome {
   align-content: center;
 }
-
-
 
 </style>
 </head>
@@ -58,8 +54,6 @@ body, html {
 &nbsp;&nbsp;
  </div>
 </div>
-
-
 
   <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
   <script>
@@ -91,15 +85,14 @@ firebase.auth().createUserWithEmailAndPassword(userEmail, userPsw).catch(functio
   var errorCode = error.code;
   var errorMessage = error.message;
   window.alert("Error: " + errorMessage);
-  if(error == null) {
-  window.open('index.html', '_self');
-}
   // ...
 });
-window.alert("Account successfully created. Click ok to Login!")
+if(firebase.errorMessage == null) {
+    window.alert("Account successfully created. Click ok to Login!")
 window.location.href = "login.html";
 }
+}
 
-  </script>
+</script>
 </body>
 </html>
