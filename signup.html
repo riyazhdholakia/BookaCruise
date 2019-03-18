@@ -37,6 +37,18 @@ body, html {
         <center><h3><font color=#FFFFFF>Sign Up to Book a Cruise</font></h3></center>
 
         <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+<input type="firstName" placeholder="First Name..." class="form-control" id="firstName_field"/>
+      </div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+<input type="lastName" placeholder="Last Name..." class="form-control" id="lastName_field"/>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
  <input type="email" placeholder="Email..." class="form-control" id="email_field"/>
         </div>
@@ -87,11 +99,26 @@ firebase.auth().createUserWithEmailAndPassword(userEmail, userPsw).catch(functio
   window.alert("Error: " + errorMessage);
   // ...
 });
-if(firebase.errorMessage == null) {
+}
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    var displayName = user.displayName;
+    var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    var providerData = user.providerData;
     window.alert("Account successfully created. Click ok to Login!")
-window.location.href = "login.html";
-}
-}
+    window.location.href = "login.html";
+    // ...
+  } else {
+    // User is signed out.
+    // ...
+  }
+});
 
 </script>
 </body>
