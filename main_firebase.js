@@ -1,9 +1,18 @@
-var config = {
-    apiKey: "AIzaSyAmbS9EKpnJRTE5AAnKKgUFMkdDF7KOePk",
-    authDomain: "cruising-23cb7.firebaseapp.com",
-    databaseURL: "https://cruising-23cb7.firebaseio.com",
-    projectId: "cruising-23cb7",
-    storageBucket: "cruising-23cb7.appspot.com",
-    messagingSenderId: "322449955301"
-  };
-  firebase.initializeApp(config);
+var db = firebase.firestore();
+function addNames() {
+    var firstName = document.getElementById("firstName_field").value;
+    var lastName = document.getElementById("lastName_field").value;
+    var email = document.getElementById("email_field").value;
+    // Add a new document in collection "cities"
+    db.collection("users").doc().set({
+        firstName: firstName,
+        lastName: lastName,
+        email: email  
+    })
+        .then(function () {
+            console.log("Document successfully written!");
+        })
+        .catch(function (error) {
+            console.error("Error writing document: ", error);
+        });
+}

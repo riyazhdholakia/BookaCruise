@@ -60,14 +60,17 @@ body, html {
 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<center><button type="button" class="btn btn-primary" onclick="signUp()">Submit</button></center>
+<center><button type="button" class="btn btn-primary" onclick="signUp(); addNames();">Submit</button></center>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <center><button type="button" class="btn btn-success" onclick="login()">Login</button></center>
 &nbsp;&nbsp;
  </div>
 </div>
 
-  <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-firestore.js"></script>
   <script>
     // Initialize Firebase
     var config = {
@@ -79,11 +82,6 @@ body, html {
       messagingSenderId: "322449955301"
     };
     firebase.initializeApp(config);
-  </script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
-
-  <script>
   
 function login() {
   window.open('login.html', '_self');
@@ -111,15 +109,15 @@ firebase.auth().onAuthStateChanged(function(user) {
     var isAnonymous = user.isAnonymous;
     var uid = user.uid;
     var providerData = user.providerData;
-    window.alert("Account successfully created. Click ok to Login!")
-    window.location.href = "login.html";
+    window.alert("Account successfully created. Click ok to proceed to Home Page!")
+    window.location.href = "index.html";
     // ...
   } else {
     // User is signed out.
     // ...
   }
 });
-
 </script>
+  <script src="main_firebase.js"></script> 
 </body>
 </html>
