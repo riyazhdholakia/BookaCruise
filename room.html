@@ -33,7 +33,7 @@ h1 {
 }
 </style>
 </head>
-<body>
+<body onload="addDestination();">
 
  <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
@@ -154,7 +154,8 @@ function sendToHomePage() {
        firebase.auth().signOut()
        console.log("success");
         print("success");
+     }
  </script>
-
+ <script src="main_firebase.js"></script> 
 </body>
 </html>
