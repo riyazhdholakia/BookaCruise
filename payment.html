@@ -124,7 +124,7 @@ h1 {
                       <img src="pics/amex.jpg" id="amex">
                   </div>
                   <div class="form-group" id="pay-now">
-                      <button type="submit" class="btn btn-default" id="confirm-purchase" onclick="return addToDB();>Confirm</button>
+                      <button type="submit" class="btn btn-default" id="confirm-purchase" onclick="goToConfirmation();">Confirm</button>
                   </div>
               </form>
           </div>
@@ -133,10 +133,15 @@ h1 {
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
          <script src="jquery.payform.min.js" charset="utf-8"></script>
          <script src="script.js"></script>
-         <script src="firebaseConnection.js"></script>
 
          <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
          <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
          <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>   
+         <script>
+
+         function goToConfirmation() {
+  window.open('confirmation.html', '_self');
+}
+</script>
 </body>
 </html>
