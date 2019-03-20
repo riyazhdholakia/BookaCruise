@@ -28,7 +28,6 @@ function addNames() {
 var user = firebase.auth().currentUser;
 
 function addDestination() {
-    window.alert("hi");
     var destination = document.getElementById("destination").value;
     // Add a new document in collection "cities"
     db.collection(user.currentUser).doc(user.currentUser.document).update({
@@ -36,6 +35,7 @@ function addDestination() {
     })
         .then(function () {
             console.log("Document successfully written!");
+            window.open('room.html', '_self');
         })
         .catch(function (error) {
             console.error("Error writing document: ", error);
