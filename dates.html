@@ -1,113 +1,214 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dates</title>
-   
-    
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<title>Dates</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+<style>
+  body,
+html {
+    width: 100%;
+    height: 100%;
+    font-family: "Lato";
+    color: white;
+    background-image: url(pics/ocean1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
 
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel='icon' href='favicon.ico' type='image/x-icon'/>
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    
-    
-    <style>
-        body,
-        html {
-            width: 100%;
-            height: 100%;
-            font-family: "Lato";
-            color: white;
-            background-image: url(pics/date.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
+h1 {
+  padding-top: 5%;
+	font-weight: 700;
+	font-size: 5em;
+}
 
-        h1 {
-            padding-top: 5%;
-            font-weight: 700;
-            font-size: 5em;
-        }
-
-        .content {
-            text-align: center;
-            text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
-        }
-        .thumbnail{
-          color: black
-        }
-    </style>
+.content{
+	text-align: center;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+}
+</style>
 </head>
 <body>
 
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Cruising</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="destination_departure.html">Book Now</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="login.html" onclick="return logout();">Log Out    <i class="fa fa-user"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="content">
-                    <h1>Dates</h1>
-                </div>
-            </div>
-        </div>
+ <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Cruising</a>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="thumbnail">
-                    
-
-                    <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
-
-<script>
-    
-$(function() {
-  $('input[name="daterange"]').daterangepicker({
-    opens: 'left'
-  }, function(start, end, label) {
-    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-  });
-});
-</script>
-         
-         <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-         <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-                    
-                </div>
-            </div>
-            
-        </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="destination_departure.html">Book Now</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html" onclick="return logout();">Log Out    <i class="fa fa-user"></i></a></li>
+      </ul>
     </div>
+  </div>
+ </nav>
+
+ <div class="container">
+ 	<div class="row">
+ 		<div class="col-lg-12">
+ 			<div class="content">
+ 				<h1>Dates</h1>
+ 			</div>
+ 		</div>
+ 	</div>
+ 
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="room.html" onclick="addDestination();">
+            <img src="pics/June.jpg" alt="Cuba" style="width:100%">
+            <div>
+              <h5 align="center">Choose one:</h5>
+            </div>
+            <div class="caption">
+                <p align="left" id="destination">
+                  Start Date: 6/4/2019 &nbsp; &nbsp; &nbsp;   End Date: 6/9/2019
+                </p>
+               
+                <p align="left" id="destination">
+                    Start Date: 6/10/2019 &nbsp; &nbsp; &nbsp;   End Date: 6/15/2019
+                </p>
+                <p align="left" id="destination">
+                    Start Date: 6/16/2019 &nbsp; &nbsp; &nbsp;   End Date: 6/21/2019
+                </p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+            <a href="room.html" onclick="addDestination();">
+            <img src="pics/July.jpg" alt="Europe" style="width:100%">
+            <div>
+                <h5 align="center">Choose one:</h5>
+              </div>
+            <div class="caption">
+                <p align="left" id="destination">
+                    Start Date: 7/4/2019 &nbsp; &nbsp; &nbsp;   End Date: 7/9/2019
+                  </p>
+                 
+                  <p align="left" id="destination">
+                      Start Date: 7/10/2019 &nbsp; &nbsp; &nbsp;   End Date: 7/15/2019
+                  </p>
+                  <p align="left" id="destination">
+                      Start Date: 7/16/2019 &nbsp; &nbsp; &nbsp;   End Date: 7/21/2019
+                  </p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+            <a href="room.html" onclick="addDestination();">
+            <img src="pics/August.jpg" alt="Mexico" style="width:100%">
+            <div>
+                <h5 align="center">Choose one:</h5>
+              </div>
+            <div class="caption">
+                <p align="left" id="destination">
+                    Start Date: 8/4/2019 &nbsp; &nbsp; &nbsp;   End Date: 8/9/2019
+                  </p>
+                 
+                  <p align="left" id="destination">
+                      Start Date: 8/10/2019 &nbsp; &nbsp; &nbsp;   End Date: 8/15/2019
+                  </p>
+                  <p align="left" id="destination">
+                      Start Date: 8/16/2019 &nbsp; &nbsp; &nbsp;   End Date: 8/21/2019
+                  </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+          <div class="thumbnail">
+              <a href="room.html" onclick="addDestination();">
+              <img src="pics/September.jpg" alt="Bahamas" style="width:100%">
+              <div>
+                  <h5 align="center">Choose one:</h5>
+                </div>
+              <div class="caption">
+                  <p align="left" id="destination">
+                      Start Date: 9/4/2019 &nbsp; &nbsp; &nbsp;   End Date: 9/9/2019
+                    </p>
+                   
+                    <p align="left" id="destination">
+                        Start Date: 9/10/2019 &nbsp; &nbsp; &nbsp;   End Date: 9/15/2019
+                    </p>
+                    <p align="left" id="destination">
+                        Start Date: 9/16/2019 &nbsp; &nbsp; &nbsp;   End Date: 9/21/2019
+                    </p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+              <a href="room.html" onclick="addDestination();">
+              <img src="pics/november.jpg" alt="Carribean" style="width:100%">
+              <div>
+                  <h5 align="center">Choose one:</h5>
+                </div>
+              <div class="caption">
+                  <p align="left" id="destination">
+                      Start Date: 10/4/2019 &nbsp; &nbsp; &nbsp;   End Date: 10/9/2019
+                    </p>
+                   
+                    <p align="left" id="destination">
+                        Start Date: 10/10/2019 &nbsp; &nbsp; &nbsp;   End Date: 10/15/2019
+                    </p>
+                    <p align="left" id="destination">
+                        Start Date: 10/16/2019 &nbsp; &nbsp; &nbsp;   End Date: 10/21/2019
+                    </p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail" onclick="addDestination();">
+              <a href="room.html">
+              <img src="pics/December.jpg" alt="hawaii" style="width:100%">
+              <div>
+                  <h5 align="center">Choose one:</h5>
+                </div>
+              <div class="caption">
+                  <p align="left" id="destination">
+                      Start Date: 11/4/2019 &nbsp; &nbsp; &nbsp;   End Date: 11/9/2019
+                    </p>
+                   
+                    <p align="left" id="destination">
+                        Start Date: 11/10/2019 &nbsp; &nbsp; &nbsp;   End Date: 11/15/2019
+                    </p>
+                    <p align="left" id="destination">
+                        Start Date: 11/16/2019 &nbsp; &nbsp; &nbsp;   End Date: 11/21/2019
+                    </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+  </div>
 
 
-    <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
-    <script>
+ <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+ <script>
    // Initialize Firebase
    var config = {
      apiKey: "AIzaSyAmbS9EKpnJRTE5AAnKKgUFMkdDF7KOePk",
@@ -118,16 +219,19 @@ $(function() {
      messagingSenderId: "322449955301"
    };
    firebase.initializeApp(config);
-    </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+ </script>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-firestore.js"></script>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script>
+ <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+ <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ <script>
 function sendToHomePage() {
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -139,7 +243,7 @@ function sendToHomePage() {
     var isAnonymous = user.isAnonymous;
     var uid = user.uid;
     var providerData = user.providerData;
-
+  
     // ...
   } else {
     // User is signed out.
@@ -152,7 +256,7 @@ function sendToHomePage() {
        firebase.auth().signOut()
        console.log("success");
         print("success");
-    </script>
-
+ </script>
+ <script src="main_firebase.js"></script> 
 </body>
 </html>
