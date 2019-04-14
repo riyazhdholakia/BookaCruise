@@ -14,17 +14,18 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="demo.css">
 <style>
- body, html {
-  height: 100%;
+ body,
+html {
+    width: 100%;
+    height: 100%;
+    font-family: "Lato";
+    color: white;
+    background-image: url(pics/ocean1.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center; 
 }
 
- body {
-  background-image: url(pics/Payments.jpg);
-  height: 100%;
-  background-repeat: repeat-y;
-  background-size: cover;
-  background-position: center;
-}
 h1 {
   padding-top: 5%;
 	font-weight: 700;
@@ -124,7 +125,7 @@ h1 {
                       <img src="pics/amex.jpg" id="amex">
                   </div>
                   <div class="form-group" id="pay-now">
-                      <button type="submit" class="btn btn-default" id="confirm-purchase" onclick="goToConfirmation();">Confirm</button>
+                      <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
                   </div>
               </form>
           </div>
@@ -139,9 +140,7 @@ h1 {
          <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>   
          <script>
 
-         function goToConfirmation() {
-  window.open('confirmation.html', '_self');
-}
+         
 </script>
 </body>
 </html>

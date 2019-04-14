@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Congratulations</title>
+	<title>Confirmation</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel='icon' href='favicon.ico' type='image/x-icon'/>
@@ -31,9 +31,13 @@ h1 {
                  0px 8px 13px rgba(0,0,0,0.1),
                  0px 18px 23px rgba(0,0,0,0.1);
 }
+
+p {
+  font-size:160%;
+}
 </style>
 </head>
-<body>
+<body onload="genConfirmNum()";>
 
  <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
@@ -63,7 +67,7 @@ h1 {
  	<div class="row">
  		<div class="col-lg-12">
  			<div class="content">
- 				<h1>Congratulations</h1>
+ 				<h1>Congratulations!</h1>
  			</div>
  		</div>
    </div>
@@ -77,7 +81,7 @@ h1 {
               &nbsp;
           <center><img src="pics/minion.gif" alt="Congratulations"></center>
           &nbsp;
-          <p>You will recieve an confirmation email shortly.</p>
+          <p>Please save your Confirmation Number: </p> <p id="confirm"></p>
       </div>
     </div>
   </div>
@@ -129,6 +133,13 @@ function sendToHomePage() {
        firebase.auth().signOut()
        console.log("success");
         print("success");
+     }
+
+function genConfirmNum() {
+  var x = document.getElementById("confirm")
+  x.innerHTML = Math.floor((Math.random() * 10000000) + 1);
+}
+
  </script>
 
 </body>

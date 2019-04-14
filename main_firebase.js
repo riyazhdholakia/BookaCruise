@@ -28,7 +28,7 @@ function addNames() {
 var user = firebase.auth().currentUser;
 
 function addDestination() {
-    var destination = document.getElementById("destination").value;
+    var destination = document.getElementById("destination").innerHTML;
     // Add a new document in collection "cities"
     db.collection(user.currentUser).doc(user.currentUser.document).update({
         destination: destination
