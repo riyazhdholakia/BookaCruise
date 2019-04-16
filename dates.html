@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
 	<title>Dates</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -75,13 +75,13 @@ h1 {
       
       <div class="col-md-4">
         <div class="thumbnail">
-          <a href="room.html" onclick="addDestination();">
+          <a href="#" onclick="getdates(this);">
               
               <h1 align="center">June</h1>
              
             <div class="caption">
                 <p align="left" id="destination">
-                  Start Date: 6/04/2019 &nbsp; &nbsp; &nbsp;       End Date: 6/09/2019
+                  Start Date:<span id='StartDate'>6/04/2019</span>  &nbsp; &nbsp; &nbsp;       End Date:<span id='EndDate'>6/09/2019</span> 6/09/2019
                 </p>
                
                 
@@ -91,12 +91,13 @@ h1 {
       </div>
       <div class="col-md-4">
         <div class="thumbnail">
-            <a href="room.html" onclick="addDestination();">
+            <a href="#" onclick="getdates(this);">
                 <h1 align="center">July</h1>
            
             <div class="caption">
                 <p align="left" id="destination">
-                    Start Date: 7/04/2019 &nbsp; &nbsp; &nbsp;   End Date: 7/09/2019
+                    Start Date:<span id='StartDate'>7/04/2019</span>  &nbsp; &nbsp; &nbsp;       End Date:<span id='EndDate'>7/09/2019</span> 6/09/2019
+                
                   </p>
                  
                   
@@ -106,12 +107,13 @@ h1 {
       </div>
       <div class="col-md-4">
         <div class="thumbnail">
-            <a href="room.html" onclick="addDestination();">
+            <a href="#" onclick="getdates(this);">
                 <h1 align="center">August</h1>
             
             <div class="caption">
                 <p align="left" id="destination">
-                    Start Date: 8/04/2019 &nbsp; &nbsp; &nbsp;   End Date: 8/09/2019
+                    Start Date:<span id='StartDate'>8/04/2019</span>  &nbsp; &nbsp; &nbsp;       End Date:<span id='EndDate'>8/09/2019</span> 6/09/2019
+                
                   </p>
                  
                   
@@ -123,12 +125,13 @@ h1 {
     <div class="row">
         <div class="col-md-4">
           <div class="thumbnail">
-              <a href="room.html" onclick="addDestination();">
+              <a href="#" onclick="getdates(this);">
                   <h1 align="center">September</h1>
               
               <div class="caption">
                   <p align="left" id="destination">
-                      Start Date: 9/04/2019 &nbsp; &nbsp; &nbsp;   End Date: 9/09/2019
+                      Start Date:<span id='StartDate'>9/04/2019</span>  &nbsp; &nbsp; &nbsp;       End Date:<span id='EndDate'>9/09/2019</span> 6/09/2019
+                
                     </p>
                    
                    
@@ -138,12 +141,13 @@ h1 {
         </div>
         <div class="col-md-4">
           <div class="thumbnail">
-              <a href="room.html" onclick="addDestination();">
+              <a href="#" onclick="getdates(this);">
                   <h1 align="center">October</h1>
               
               <div class="caption">
                   <p align="left" id="destination">
-                      Start Date: 10/04/2019 &nbsp; &nbsp; &nbsp;   End Date: 10/09/2019
+                      Start Date:<span id='StartDate'>10/04/2019</span>  &nbsp; &nbsp; &nbsp;       End Date:<span id='EndDate'>10/09/2019</span> 6/09/2019
+                
                     </p>
                    
                    
@@ -152,13 +156,14 @@ h1 {
           </div>
         </div>
         <div class="col-md-4">
-          <div class="thumbnail" onclick="addDestination();">
-              <a href="room.html">
+          <div class="thumbnail" onclick="getdates(this);">
+              <a href="#">
                   <h1 align="center">November</h1>
              
               <div class="caption">
                   <p align="left" id="destination">
-                      Start Date: 11/04/2019 &nbsp; &nbsp; &nbsp;   End Date: 11/09/2019
+                      Start Date:<span id='StartDate'>11/04/2019</span>  &nbsp; &nbsp; &nbsp;       End Date:<span id='EndDate'>11/09/2019</span> 6/09/2019
+                
                     </p>
                    
                    
@@ -186,17 +191,11 @@ h1 {
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
- <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
- <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
- <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
- <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
- <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-firestore.js"></script>
-
+ 
  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
  <script>
-function sendToHomePage() {
-  firebase.auth().onAuthStateChanged(function(user) {
+   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
     var displayName = user.displayName;
@@ -206,19 +205,35 @@ function sendToHomePage() {
     var isAnonymous = user.isAnonymous;
     var uid = user.uid;
     var providerData = user.providerData;
-  
+    //window.open('index.html', '_self');
     // ...
   } else {
+    location.href='login.html';
     // User is signed out.
     // ...
-  }
-});
-}
+  }});
+
+  
+  
+
+var destination;
      function logout() {
         print("success");
        firebase.auth().signOut()
        console.log("success");
-        print("success");
+        print("success");}
+        $(function(){
+          destination = window.location.search.substr(1);
+      
+        })
+        function getdates(event){
+           var SDate=$(event).find('#StartDate').html().toString();
+           var EDate=$(event).find('#EndDate').html().toString();      
+
+          
+          location.href='room.html?'+destination+'&'+SDate+'&'+EDate;
+        }
+
  </script>
  <script src="main_firebase.js"></script> 
 </body>

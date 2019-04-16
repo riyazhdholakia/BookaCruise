@@ -72,8 +72,6 @@ body, html {
     };
     firebase.initializeApp(config);
   </script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
 
   <script>
   function login() {
@@ -88,7 +86,7 @@ body, html {
     window.alert("Error: " + errorMessage);
   }
 });
-sendToHomePage();
+  sendToHomePage();
   }
 
   function sendToHomePage() {
@@ -102,8 +100,8 @@ sendToHomePage();
     var isAnonymous = user.isAnonymous;
     var uid = user.uid;
     var providerData = user.providerData;
-    window.open('index.html', '_self');
-    // ...
+    location.href='index.html';
+        // ...
   } else {
     // User is signed out.
     // ...

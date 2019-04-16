@@ -76,12 +76,14 @@ h1 {
          <div class="creditCardForm">
            <div>
              <h2>Cart</h2>
-                <p>Destination: </p>
-                <p>Room and Price: </p>
-                <p>Dates: </p>
+                <p>Destination:<span id='des'></span> </p>
+                <p>Room: <span id='room'></span></p>
+                <p>Price: <span id='price'></span></p>
+                <p>dates: <span id='sdate'></span></p>
+                
            </div>
           <div class="payment">
-              <form>
+              <form >
                   <div class="form-group owner">
                       <label for="owner">Name on Card</label>
                       <input type="text" class="form-control" id="owner">
@@ -96,7 +98,7 @@ h1 {
                   </div>
                   <div class="form-group" id="expiration-date">
                       <label>Expiration Date</label>
-                      <select>
+                      <select id="expirationMonth">
                           <option value="01">January</option>
                           <option value="02">February </option>
                           <option value="03">March</option>
@@ -110,7 +112,7 @@ h1 {
                           <option value="11">November</option>
                           <option value="12">December</option>
                       </select>
-                      <select>
+                      <select id="expirationYear">
                           <option value="19"> 2019</option>
                           <option value="20"> 2020</option>
                           <option value="21"> 2021</option>
@@ -118,7 +120,9 @@ h1 {
                           <option value="23"> 2023</option>
                           <option value="24"> 2024</option>
                       </select>
+                     
                   </div>
+                  
                   <div class="form-group" id="credit_cards">
                       <img src="pics/visa.jpg" id="visa">
                       <img src="pics/mastercard.jpg" id="mastercard">
@@ -136,10 +140,53 @@ h1 {
          <script src="script.js"></script>
 
          <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
-         <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
-         <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>   
          <script>
-
+              var config = {
+     apiKey: "AIzaSyAmbS9EKpnJRTE5AAnKKgUFMkdDF7KOePk",
+     authDomain: "cruising-23cb7.firebaseapp.com",
+     databaseURL: "https://cruising-23cb7.firebaseio.com",
+     projectId: "cruising-23cb7",
+     storageBucket: "cruising-23cb7.appspot.com",
+     messagingSenderId: "322449955301"
+   };
+   firebase.initializeApp(config);
+   var User;
+   firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    User=user;
+    var displayName = user.displayName;
+    var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    var providerData = user.providerData;
+    destination = window.location.search.substr(1);
+        
+         
+          firebase.database().ref('Users/'+user.uid).once('value',function(snp){
+            for(var key in snp.val()){
+              document.getElementById('des').innerHTML=snp.val().destination;
+              var roomType=snp.val().roomType.replace('%20',' ');
+              roomType=roomType.replace('%20',' ');
+              document.getElementById('room').innerHTML=roomType;
+              document.getElementById('price').innerHTML=snp.val().roomPrice;
+              document.getElementById('sdate').innerHTML=snp.val().startDate+" to "+snp.val().endDate ;
+          
+            }
+          })
+    //window.open('index.html', '_self');
+    // ...
+  } else {
+    location.href='login.html';
+    // User is signed out.
+    // ...
+  }});
+           $(function(){
+          
+        })
+        
          
 </script>
 </body>

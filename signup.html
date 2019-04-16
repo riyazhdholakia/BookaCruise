@@ -60,7 +60,7 @@ body, html {
 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<center><button type="button" class="btn btn-primary" onclick="signUp(); addNames();">Submit</button></center>
+<center><button type="button" class="btn btn-primary" onclick="signUp();">Submit</button></center>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <center><button type="button" class="btn btn-success" onclick="login()">Login</button></center>
 &nbsp;&nbsp;
@@ -68,9 +68,6 @@ body, html {
 </div>
 
   <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-firestore.js"></script>
   <script>
     // Initialize Firebase
     var config = {
@@ -88,6 +85,9 @@ function login() {
 }
 
 function signUp() {
+  var FN= document.getElementById('firstName_field').value;
+  var LN= document.getElementById('lastName_field').value;
+  
     var userEmail = document.getElementById("email_field").value;
     var userPsw = document.getElementById("psw_field").value;
 firebase.auth().createUserWithEmailAndPassword(userEmail, userPsw).catch(function(error) {
@@ -96,6 +96,12 @@ firebase.auth().createUserWithEmailAndPassword(userEmail, userPsw).catch(functio
   var errorMessage = error.message;
   window.alert("Error: " + errorMessage);
   // ...
+}).then(function(user){
+
+firebase.database().ref('Users/'+user['user'].uid).set({firstName:FN,lastName:LN}).then(function(){
+  console.log('saved');
+  window.location.href = "index.html";
+})
 });
 }
 
@@ -109,8 +115,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     var isAnonymous = user.isAnonymous;
     var uid = user.uid;
     var providerData = user.providerData;
-    window.alert("Account successfully created. Click ok to proceed to Home Page!")
-    window.location.href = "index.html";
+   
     // ...
   } else {
     // User is signed out.

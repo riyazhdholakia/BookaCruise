@@ -75,7 +75,7 @@ h1 {
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder="Type a message here, please be detailed..."></textarea>
           </div>
          <div class="row">
-               <center><input class="btn btn-primary" type="submit" value="Submit"></center>
+               <center><input class="btn btn-primary" onclick="addData();" type="button" value="Submit"></center>
           </div>
         </form>
     </div>
@@ -145,6 +145,7 @@ h1 {
 
  <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
  <script>
+   var User;
    // Initialize Firebase
    var config = {
      apiKey: "AIzaSyAmbS9EKpnJRTE5AAnKKgUFMkdDF7KOePk",
@@ -155,20 +156,10 @@ h1 {
      messagingSenderId: "322449955301"
    };
    firebase.initializeApp(config);
- </script>
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
- <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
- <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
-
- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
- <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
- <script>
-function sendToHomePage() {
-  firebase.auth().onAuthStateChanged(function(user) {
+   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
+    User=user;
     var displayName = user.displayName;
     var email = user.email;
     var emailVerified = user.emailVerified;
@@ -183,7 +174,24 @@ function sendToHomePage() {
     // ...
   }
 });
+   function addData(){
+var messgae=document.getElementById('exampleFormControlTextarea1').value;
+firebase.database().ref('contacts').push({messgae:messgae,email:User.email},function(){
+  alert('Message send successfully');
+  location.reload();
+  return false;
+})
 }
+ </script>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+ <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+ <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ <script>
+
+
      function logout() {
         print("success");
        firebase.auth().signOut()

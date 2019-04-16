@@ -83,25 +83,25 @@ h1 {
       </div>
     
     <div class="container">
-    <form class="needs-validation" action="payment.html">
+    <form class="needs-validation" onsubmit="return false,SavePassengerData()">
       <div class="form-row">
         <div class="col-md-4 mb-3">
           <label for="validationTooltip01">First Name</label>
-          <input type="text" class="form-control" id="validationTooltip01" placeholder="John" required>
+          <input type="text" class="form-control" id="P1FirstName" placeholder="John" required>
           <div class="valid-tooltip">
 
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationTooltip02">Last Name</label>
-          <input type="text" class="form-control" id="validationTooltip02" placeholder="Smith" required>
+          <input type="text" class="form-control" id="P1LastName" placeholder="Smith" required>
           <div class="valid-tooltip">
 
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationTooltip01">DOB</label>
-          <input type="text" class="form-control" id="validationTooltip01" placeholder="01/05/1978" required>
+          <input type="text" class="form-control" id="P1DOB" placeholder="01/05/1978" required>
           <div class="valid-tooltip">
 
           </div>
@@ -110,21 +110,21 @@ h1 {
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="validationTooltip03">City</label>
-          <input type="text" class="form-control" id="validationTooltip03" placeholder="Atlanta" required>
+          <input type="text" class="form-control" id="P1City" placeholder="Atlanta" required>
           <div class="invalid-tooltip">
 
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <label for="validationTooltip04">State</label>
-          <input type="text" class="form-control" id="validationTooltip04" placeholder="GA" required>
+          <input type="text" class="form-control" id="P1State" placeholder="GA" required>
           <div class="invalid-tooltip">
 
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <label for="validationTooltip05">Zip Code</label>
-          <input type="text" class="form-control" id="validationTooltip05" placeholder="30020" required>
+          <input type="text" class="form-control" id="P1Zip" placeholder="30020" required>
           <div class="invalid-tooltip">
 
           </div>
@@ -133,16 +133,15 @@ h1 {
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="validationTooltip04">Email</label>
-          <input type="text" class="form-control" id="validationTooltip04" placeholder="hello@gmail.com" required>
+          <input type="email" class="form-control" id="P1Email" placeholder="hello@gmail.com" required>
           <div class="invalid-tooltip">
   
           </div>
         </div>
         <div class="col-md-6 mb-3">
           <label for="validationTooltip05">Phone Number</label>
-          <input type="text" class="form-control" id="validationTooltip05" placeholder="404-111-8888" required>
+          <input type="text" class="form-control" id="P1PhoneNumber" placeholder="404-111-8888" required>
           <div class="invalid-tooltip">
-
           </div>
         </div>
       </div>
@@ -160,21 +159,21 @@ h1 {
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="validationTooltip01">First Name</label>
-        <input type="text" class="form-control" id="validationTooltip01" placeholder="John" required>
+        <input type="text" class="form-control" id="P2FirstName" placeholder="John" required>
         <div class="valid-tooltip">
 
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationTooltip02">Last Name</label>
-        <input type="text" class="form-control" id="validationTooltip02" placeholder="Smith" required>
+        <input type="text" class="form-control" id="P2LastName" placeholder="Smith" required>
         <div class="valid-tooltip">
 
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationTooltip01">DOB</label>
-        <input type="text" class="form-control" id="validationTooltip01" placeholder="01/05/1978" required>
+        <input type="text" class="form-control" id="P2DOB" placeholder="01/05/1978" required>
         <div class="valid-tooltip">
 
         </div>
@@ -183,21 +182,21 @@ h1 {
     <div class="form-row">
       <div class="col-md-6 mb-3">
         <label for="validationTooltip03">City</label>
-        <input type="text" class="form-control" id="validationTooltip03" placeholder="Atlanta" required>
+        <input type="text" class="form-control" id="P2City" placeholder="Atlanta" required>
         <div class="invalid-tooltip">
 
         </div>
       </div>
       <div class="col-md-3 mb-3">
         <label for="validationTooltip04">State</label>
-        <input type="text" class="form-control" id="validationTooltip04" placeholder="GA" required>
+        <input type="text" class="form-control" id="P2State" placeholder="GA" required>
         <div class="invalid-tooltip">
 
         </div>
       </div>
       <div class="col-md-3 mb-3">
         <label for="validationTooltip05">Zip Code</label>
-        <input type="text" class="form-control" id="validationTooltip05" placeholder="30020" required>
+        <input type="text" class="form-control" id="P2Zip" placeholder="30020" required>
         <div class="invalid-tooltip">
           Zip Code
         </div>
@@ -206,14 +205,14 @@ h1 {
     <div class="form-row">
       <div class="col-md-6 mb-3">
         <label for="validationTooltip04">Email</label>
-        <input type="text" class="form-control" id="validationTooltip04" placeholder="hello@gmail.com" required>
+        <input type="email" class="form-control" id="P2Email" placeholder="hello@gmail.com" required>
         <div class="invalid-tooltip">
 
         </div>
       </div>
       <div class="col-md-6 mb-3">
         <label for="validationTooltip05">Phone Number</label>
-        <input type="text" class="form-control" id="validationTooltip05" placeholder="404-111-8888" required>
+        <input type="text" class="form-control" id="P2PhoneNumber" placeholder="404-111-8888" required>
         <div class="invalid-tooltip">
 
         </div>
@@ -227,6 +226,7 @@ h1 {
 
               <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
   <script>
+    var User;
     // Initialize Firebase
     var config = {
       apiKey: "AIzaSyAmbS9EKpnJRTE5AAnKKgUFMkdDF7KOePk",
@@ -237,10 +237,25 @@ h1 {
       messagingSenderId: "322449955301"
     };
     firebase.initializeApp(config);
+    firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    User=user;
+    // User is signed in.
+    var displayName = user.displayName;
+    var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    var providerData = user.providerData;
+    //window.open('index.html', '_self');
+    // ...
+  } else {
+    location.href='login.html';
+    // User is signed out.
+    // ...
+  }});
   </script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
 
   <script>
       function logout() {
@@ -249,6 +264,79 @@ h1 {
         function goToPaymentPage() {
           window.open('payment.html', '_self');
      }
+     function getSearchParameters() {
+      var prmstr = window.location.search.substr(1);
+      return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+
+    }
+var params = [];
+function transformToAssocArray( prmstr ) {
+   
+    var prmarr = prmstr.split("&");
+    for ( var i = 0; i < prmarr.length; i++) {
+        params.push(prmarr[i]);
+    }
+    return params;
+}
+
+function SavePassengerData(){
+
+  P1Data={
+    firstName: $('#P1FirstName').val(),
+
+    lastName: $('#P1LastName').val(), 
+    
+    DOB: $('#P1DOB').val(), 
+    
+    city: $('#P1City').val(), 
+    
+    state: $('#P1State').val(), 
+    
+    Zip: $('#P1Zip').val(), 
+    
+    email: $('#P1Email').val(), 
+    phoneNumber: $('#P1PhoneNumber').val(), 
+    
+  }
+  P2Data={
+    firstName: $('#P2FirstName').val(),
+
+    lastName: $('#P2LastName').val(), 
+    
+    DOB: $('#P2DOB').val(), 
+    
+    city: $('#P2City').val(), 
+    
+    state: $('#P2State').val(), 
+    
+    Zip: $('#P2Zip').val(), 
+    
+    email: $('#P2Email').val(), 
+    phoneNumber: $('#P2PhoneNumber').val(), 
+    
+  }
+data={
+  passengerOne:P1Data,
+  passengerTwo:P2Data,
+  destination: params[0],
+  startDate:params[1],
+  endDate:params[2],
+  roomType:params[3],
+  roomPrice:params[4],
+  email: User.email
+}
+console.log(data);
+var id=firebase.database().ref('Users/'+User.uid).push().getKey();
+firebase.database().ref('Users/'+User.uid).update(data,function(){
+  console.log('inserted');
+  location.href='payment.html?'+User.uid;
+})
+  return false;
+}
+var params = getSearchParameters();
+console.log(params);
+    function getPassengerData(){
+    }
 
 // // Example starter JavaScript for disabling form submissions if there are invalid fields
 // (function() {

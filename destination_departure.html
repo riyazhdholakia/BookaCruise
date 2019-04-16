@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 	<title>Destinations</title>
@@ -71,7 +70,7 @@ h1 {
     <div class="row">
       <div class="col-md-4">
         <div class="thumbnail">
-          <a href="dates.html" onclick="addDestination();">
+          <a href="dates.html?Cuba" onclick="addDestination();">
             <img src="pics/cuba.jpg" alt="Cuba" style="width:100%">
             <div class="caption">
                 <center><p id="destination">Destination: Cuba</p></center>
@@ -82,7 +81,7 @@ h1 {
       </div>
       <div class="col-md-4">
         <div class="thumbnail">
-            <a href="dates.html" onclick="addDestination();">
+            <a href="dates.html?Europe" onclick="addDestination();">
             <img src="pics/europe.jpg" alt="Europe" style="width:100%">
             <div class="caption">
                 <center><p id="destination">Destination: Europe</p></center>
@@ -93,7 +92,7 @@ h1 {
       </div>
       <div class="col-md-4">
         <div class="thumbnail">
-            <a href="dates.html" onclick="addDestination();">
+            <a href="dates.html?Maxico" onclick="addDestination();">
             <img src="pics/mexico.jpg" alt="Mexico" style="width:100%">
             <div class="caption">
                 <center><p id="destination">Destination: Mexico</p></center>
@@ -106,7 +105,7 @@ h1 {
     <div class="row">
         <div class="col-md-4">
           <div class="thumbnail">
-              <a href="dates.html" onclick="addDestination();">
+              <a href="dates.html?Bahamas" onclick="addDestination();">
               <img src="pics/bahamas.jpg" alt="Bahamas" style="width:100%">
               <div class="caption">
                   <center><p id="destination">Destination: Bahamas</p></center>
@@ -117,7 +116,7 @@ h1 {
         </div>
         <div class="col-md-4">
           <div class="thumbnail">
-              <a href="dates.html" onclick="addDestination();">
+              <a href="dates.html?Carribean" onclick="addDestination();">
               <img src="pics/carribean.jpg" alt="Carribean" style="width:100%">
               <div class="caption">
                 <center><p id="destination">Destination: Carribean</p></center>
@@ -128,7 +127,7 @@ h1 {
         </div>
         <div class="col-md-4">
           <div class="thumbnail" onclick="addDestination();">
-              <a href="dates.html">
+              <a href="dates.html?Hawaii">
               <img src="pics/hawaii.jpg" alt="hawaii" style="width:100%">
               <div class="caption">
                   <center><p id="destination">Destination: Hawaii</p></center>
@@ -153,15 +152,29 @@ h1 {
      messagingSenderId: "322449955301"
    };
    firebase.initializeApp(config);
+   firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    var displayName = user.displayName;
+    var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    var providerData = user.providerData;
+    console.log(user);
+    //window.open('index.html', '_self');
+    // ...
+  } else {
+    location.href='login.html';
+    // User is signed out.
+    // ...
+  }
+});
  </script>
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
- <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
- <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
- <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
- <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
- <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-firestore.js"></script>
 
  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

@@ -56,7 +56,19 @@ $(function() {
             alert("Wrong CVV");
         } else {
             // Everything is correct. Add your form submission code here.
-            window.open('confirmation.html', '_self');
+            var data={
+                owner: $('#owner').val(),
+                cardNumber: $('#cardNumber').val(),
+                cvv: $('#cvv').val(),
+                expirationMonth: $('#expirationMonth').val(),
+                expirationYear: $('#expirationYear').val(),
+                
+              } 
+              var destination = window.location.search.substr(1);
+              var user = firebase.auth().currentUser;
+              firebase.database().ref('Users/'+user.uid).update({cardInfo:data},function(){
+                     location.href='confirmation.html?'+destination;  
+            })
         }
     });
 });
