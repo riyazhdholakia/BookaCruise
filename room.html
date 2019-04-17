@@ -71,33 +71,33 @@ h1 {
   <div class="row">
       <div class="col-md-4">
         <div class="thumbnail">
-          <a href="passenger.html">
+          <a href="#" onclick="roomSelect(this)">
             <img src="pics/silverroom.jpeg" alt="Silver" style="width:100%">
             <div class="caption">
-                <center><p>Silver Suite 1</p></center>
-                <center><p>Price: $399.99</p></center>
+                <center><p id='roomType'>Silver Suite 1</p></center>
+                <center><p>Price: <span id='roomPrice'>$399.99</span></p></center>
             </div>
           </a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="thumbnail">
-            <a href="passenger.html">
+            <a href="#" onclick="roomSelect(this)">
             <img src="pics/roomgold.jpeg" alt="Gold" style="width:100%">
             <div class="caption">
-                <center><p>Gold Suite 1</p></center>
-                <center><p>Price: $499.99</p></center>
+                <center><p id='roomType'>Gold Suite 1</p></center>
+                <center><p>Price: <span id='roomPrice'>$499.99</span></p></center>
             </div>
           </a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="thumbnail">
-            <a href="passenger.html">
+            <a href="#" onclick="roomSelect(this)">
             <img src="pics/platinumroom.jpeg" alt="Platinum" style="width:100%">
             <div class="caption">
-                <center><p>Platinum Suite 1</p></center>
-                <center><p>Price: $599.99</p></center>
+                <center><p id='roomType'>Platinum Suite 1</p></center>
+                <center><p>Price:<span id='roomPrice'>$599.99</span> </p></center>
             </div>
           </a>
         </div>
@@ -106,33 +106,33 @@ h1 {
     <div class="row">
         <div class="col-md-4">
             <div class="thumbnail">
-              <a href="passenger.html">
+              <a href="#" onclick="roomSelect(this)">
                 <img src="pics/s2.jpg" alt="Silver" style="width:100%">
                 <div class="caption">
-                    <center><p>Silver Suite 2</p></center>
-                    <center><p>Price: $399.99</p></center>
+                    <center><p id='roomType'>Silver Suite 2</p></center>
+                    <center><p>Price: <span id='roomPrice'>$399.99</span></p></center>
               </div>
             </a>
           </div>
         </div>
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="passenger.html">
+                <a href="#" onclick="roomSelect(this)">
                 <img src="pics/goldsuites2.jpg" alt="Gold" style="width:100%">
                 <div class="caption">
-                    <center><p>Gold Suite 2</p></center>
-                    <center><p>Price: $499.99</p></center>
+                    <center><p id='roomType'>Gold Suite 2</p></center>
+                    <center><p>Price: <span id='roomPrice'>$499.99</span></p></center>
               </div>
             </a>
           </div>
         </div>
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="passenger.html">
+                <a href="#" onclick="roomSelect(this)">
                 <img src="pics/platinumsuites2.jpg" alt="Platinum" style="width:100%">
                 <div class="caption">
-                    <center><p>Platinum Suite 2</p></center>
-                    <center><p>Price: $599.99</p></center>
+                    <center><p id='roomType'>Platinum Suite 2</p></center>
+                    <center><p>Price:<span id='roomPrice'>$599.99</span></p></center>
               </div>
             </a>
           </div>
@@ -156,14 +156,13 @@ h1 {
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
- <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
- <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+
 
  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
  <script>
-function sendToHomePage() {
-  firebase.auth().onAuthStateChanged(function(user) {
+
+firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
     var displayName = user.displayName;
@@ -173,20 +172,48 @@ function sendToHomePage() {
     var isAnonymous = user.isAnonymous;
     var uid = user.uid;
     var providerData = user.providerData;
-  
+    //window.open('index.html', '_self');
     // ...
   } else {
+    location.href='login.html';
     // User is signed out.
     // ...
-  }
-});
-}
+  }});
+
      function logout() {
         print("success");
        firebase.auth().signOut()
        console.log("success");
         print("success");
      }
+    
+      function getSearchParameters() {
+      var prmstr = window.location.search.substr(1);
+      return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+
+    }
+var params = [];
+function transformToAssocArray( prmstr ) {
+   
+    var prmarr = prmstr.split("&");
+    for ( var i = 0; i < prmarr.length; i++) {
+         params.push(prmarr[i]);
+    }
+    return params;
+}
+
+var params = getSearchParameters();
+console.log(params);
+    
+     function roomSelect(event){
+      
+      console.log(event);
+      var RType=$(event).find('#roomType').html().toString();
+      var RPrice=$(event).find('#roomPrice').html().toString();    
+      RType.split('%20').join(''); 
+      console.log(RType,RPrice); 
+      location.href='passenger.html?'+params[0]+'&'+params[1]+'&'+params[2]+'&'+RType+'&'+RPrice;
+}
  </script>
  <script src="main_firebase.js"></script> 
 </body>
