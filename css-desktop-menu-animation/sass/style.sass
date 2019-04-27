@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Abel')
+
+*
+	box-sizing: border-box
+
+body
+	width: 100vw
+	height: 100vh
+	font-family: Abel, Helvetica, sans-serif
+
+.home
+	background: #222
+	width: 100%
+	height: 100%
+	display: flex
+	align-items: center
+	justify-content: center
+
+	> p
+		color: #fff
+		font-size: 2rem
+		text-transform: uppercase
+	
+.menu-trigger
+	position: fixed
+	top: 0
+	left: 0
+	width: 50px
+	height: 100%
+	cursor: pointer
+	display: flex
+	align-items: center
+	justify-content: center
+	z-index: 10
+	background: #222
+
+	&:hover
+		border-right: none
+
+		> .bars > span
+			&:first-of-type,
+			&:last-of-type
+				transform: translateY(-5px)
+				opacity: 0
+	
+			&:nth-of-type(2)
+				transform: scaleY(1.2)
+				transform-origin: center bottom
+	
+		> .menu
+			transform: translateX(50px)
+	
+			> ul > li > p
+				transform: translateY(0)
+	
+		> p
+			transform: translateY(20px) rotate(-90deg)
+			opacity: 1
+
+	> p
+		color: #aaa
+		transform: translateY(40px) rotate(-90deg)
+		margin-top: 30px
+		font-weight: bold
+		letter-spacing: .12rem
+		transition: all .4s ease
+		position: absolute
+		opacity: 0
+		font-size: .9rem
+		z-index: 10
+
+.bars
+	display: flex
+	width: 50%
+	align-items: center
+	justify-content: space-between
+	z-index: 10
+
+	> span
+		width: 4px
+		height: 40px
+		background: #666
+		transition: all .4s ease
+		
+.menu
+	position: absolute
+	top: 0
+	left: 0
+	background: #222
+	height: 100%
+	border-right: 1px solid #444
+	transform: translateX(calc(-100% + 51px))
+	transition: all .8s cubic-bezier(.785,.135,.15,.86)
+	padding: 50px 100px 50px 50px
+
+	> ul
+		&:hover
+			> li:not(:hover)
+				color: rgba(#f9f9ed, .5)
+		
+		> li
+			color: #f9f9ed
+			font-size: 2rem
+			cursor: pointer
+			padding: 10px 0
+			width: 160px
+			overflow: hidden
+		
+			&:first-of-type
+				padding-top: 0
+		
+			&:last-of-type
+				padding-bottom: 0
+	
+			@for $i from 1 through 5		
+				&:nth-of-type(#{$i}) > p
+					transition: transform .6s cubic-bezier(.785,.135,.15,.86) .1s * $i, color .2s ease
+			
+			> p
+				transform: translateY(calc(100% + 10px))
+
+.dribbble-link
+	position: fixed
+	bottom: 20px
+	right: 20px
+	background: #E04982
+	width: 50px
+	height: 50px
+	border-radius: 50%
+	display: flex
+	align-items: center
+	justify-content: center
+	text-decoration: none
+
+	&:before
+		content: 'View original post on Dribbble'
+		position: absolute
+		top: -85%
+		left: -150px
+		width: 180px
+		transition: all .4s ease
+		background: #fff
+		color: #222
+		border-radius: 5px
+		padding: 10px
+		transform: translateY(10px)
+		opacity: 0
+		z-index: -1
+		pointer-events: none
+
+	&:hover
+		&:before
+			transform: translateY(0)
+			opacity: 1
+			pointer-events: auto
+			z-index: 1
+
+	> i
+		color: #fff
+		font-size: 1.8rem
+	
