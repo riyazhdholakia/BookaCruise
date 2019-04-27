@@ -8,7 +8,7 @@ Group Number: 1
 <br />
 Project Title: Book a Cruise
 <br />
-Project Webiste Name: Cruising
+Project Website Name: Cruising
 <br />
 <br />
 https://riyazhdholakia.github.io/CSC-SWE-Friends/ 
