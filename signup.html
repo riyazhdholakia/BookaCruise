@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<title>Sign Up</title>
+<style>
+body, html {
+  height: 100%;
+}
+
+ body {
+  background-image: url(pics/cruise3.jpg);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#welcome {
+  align-content: center;
+}
+
+</style>
+</head>
+<body>
+    <div id="welcome" style="width:400px; margin:0 auto;">
+    <center><h1><font color=#FFFFFF>Welcome to Cruising!</font></h1></center>
+    </div>
+    <div class="container">
+    <div id="bgwhite" style="width:400px; margin:0 auto;">
+        <center><h3><font color=#FFFFFF>Sign Up to Book a Cruise</font></h3></center>
+
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+<input type="firstName" placeholder="First Name..." class="form-control" id="firstName_field"/>
+      </div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+<input type="lastName" placeholder="Last Name..." class="form-control" id="lastName_field"/>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+ <input type="email" placeholder="Email..." class="form-control" id="email_field"/>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+ <input type="password" placeholder="Password..." class="form-control" id="psw_field"/>
+        </div>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<center><button type="button" class="btn btn-primary" onclick="signUp();">Submit</button></center>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <center><button type="button" class="btn btn-success" onclick="login()">Login</button></center>
+&nbsp;&nbsp;
+ </div>
+</div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAmbS9EKpnJRTE5AAnKKgUFMkdDF7KOePk",
+      authDomain: "cruising-23cb7.firebaseapp.com",
+      databaseURL: "https://cruising-23cb7.firebaseio.com",
+      projectId: "cruising-23cb7",
+      storageBucket: "cruising-23cb7.appspot.com",
+      messagingSenderId: "322449955301"
+    };
+    firebase.initializeApp(config);
+  
+function login() {
+  window.open('login.html', '_self');
+}
+
+function signUp() {
+  var FN= document.getElementById('firstName_field').value;
+  var LN= document.getElementById('lastName_field').value;
+  
+    var userEmail = document.getElementById("email_field").value;
+    var userPsw = document.getElementById("psw_field").value;
+firebase.auth().createUserWithEmailAndPassword(userEmail, userPsw).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  window.alert("Error: " + errorMessage);
+  // ...
+}).then(function(user){
+
+firebase.database().ref('Users/'+user['user'].uid).set({firstName:FN,lastName:LN}).then(function(){
+  console.log('saved');
+  window.location.href = "index.html";
+})
+});
+}
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    var displayName = user.displayName;
+    var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    var providerData = user.providerData;
+   
+    // ...
+  } else {
+    // User is signed out.
+    // ...
+  }
+});
+</script>
+  <script src="main_firebase.js"></script> 
+</body>
+</html>
