@@ -1,4 +1,4 @@
-var db = firebase.firestore(); 
+var db = firebase.firestore();
 function addNames() {
     var firstName = document.getElementById("firstName_field").value;
     var lastName = document.getElementById("lastName_field").value;

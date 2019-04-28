@@ -1,4 +1,4 @@
-$(function() { 
+$(function() {
 
     var owner = $('#owner');
     var cardNumber = $('#cardNumber');
