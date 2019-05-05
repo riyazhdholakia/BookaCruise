@@ -32,7 +32,8 @@ Contributors:
 <br />
 5. [Syed Kalam](https://github.com/kalsyed91)
 
-
+<br />
+<br />
 Database: Google's Firebase
 <br />
 Languages: HTML, CSS, JavaScript, JQuery, Regex, *other libraries
