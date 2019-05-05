@@ -34,4 +34,5 @@ Contributors:
 
 
 Database: Google's Firebase
+<br />
 Languages: HTML, CSS, JavaScript, JQuery, Regex, *other libraries
