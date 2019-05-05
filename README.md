@@ -1,4 +1,4 @@
-# Book a Cruise 
+# Book a Cruise: Award Won: "Best Undergraduate Project"
 <br />
 GSU CSC Software Engineering Project 
 <br />
@@ -31,3 +31,7 @@ Contributors:
 4. [Biprojoyti Paul](https://github.com/Bipro723)
 <br />
 5. [Syed Kalam](https://github.com/kalsyed91)
+
+
+Database: Google's Firebase
+Languages: HTML, CSS, JavaScript, JQuery, Regex, *other libraries
