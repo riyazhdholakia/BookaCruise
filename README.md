@@ -11,7 +11,7 @@ Project Title: Book a Cruise
 Project Webiste Name: Cruising
 <br />
 <br />
-https://riyazhdholakia.github.io/CSC-SWE-Friends/ 
+https://riyazhdholakia.github.io/BookaCruise/ 
 <br />
 Click link to see our website!
 <br />
