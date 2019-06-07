@@ -1,4 +1,4 @@
-# Book a Cruise: Award Won: "Best Undergraduate Project"
+# Book a Cruise: Award Won- "Best Undergraduate Project"
 <br />
 GSU CSC Software Engineering Project 
 <br />
